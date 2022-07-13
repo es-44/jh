@@ -1,0 +1,9 @@
+@startuml diagram
+Member -> Community: Join Request
+
+
+'comment
+/'
+comment
+'/
+@enduml
