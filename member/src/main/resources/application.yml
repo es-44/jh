@@ -6,10 +6,25 @@ spring:
     url: jdbc:h2:mem:member
     username: admin
     password: admin
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: create
   h2:
     console:
       enabled: true
       path: /h2
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: localhost:9092
+#      bindings:
+#        member-output:
+#          destination: member
+#          content-type: application/json
+
 
 server:
   port: 8081
