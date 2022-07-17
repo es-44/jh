@@ -21,4 +21,9 @@ public class MemberApplication {
         SpringApplication.run(MemberApplication.class, args);
     }
 
+//    @Bean
+//    public Supplier<Date> date() {
+//        return () -> new Date(12345L);
+//    }
+
 }
