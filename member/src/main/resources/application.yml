@@ -15,15 +15,15 @@ spring:
     console:
       enabled: true
       path: /h2
-#  cloud:
-#    stream:
-#      kafka:
-#        binder:
-#          brokers: localhost:9092
-#      bindings:
-#        member-output:
-#          destination: member
-#          content-type: application/json
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        member-output-0:
+          destination: member
+          content-type: application/json
 
 
 server:

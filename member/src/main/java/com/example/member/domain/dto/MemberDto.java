@@ -21,5 +21,4 @@ public class MemberDto {
 
     private int communityCount;
 
-
 }
