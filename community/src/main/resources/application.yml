@@ -15,6 +15,18 @@ spring:
     console:
       enabled: true
       path: /h2
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+        bindings:
+          member-input-0:
+            destination: member
+            content-type: application/json
+          community-output-0:
+            destination: community
+            content-type: application/json
 server:
   port: 8082
 
