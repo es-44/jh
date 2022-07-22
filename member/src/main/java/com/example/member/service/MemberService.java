@@ -11,7 +11,7 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional(readOnly = true)
+@Transactional
 @RequiredArgsConstructor
 @Service
 public class MemberService {
@@ -19,7 +19,6 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final StreamBridge streamBridge;
 
-    @Transactional
     public MemberDto joinMember(MemberDto dto) {
 
         Member member = memberRepository.save(new Member(dto));
@@ -52,4 +51,19 @@ public class MemberService {
                         .build());
     }
 
+    public void deleteMember(MemberDto dto) {
+
+        Member member = new Member(dto);
+        memberRepository.delete(member);
+    }
+
+    public void updateCommunityCnt(MemberDto dto, String communityId, String type) {
+
+        Member member = new Member(dto);
+
+        // community 검증
+
+
+
+    }
 }

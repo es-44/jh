@@ -15,8 +15,8 @@ spring:
     console:
       enabled: true
       path: /h2
-  cloud:
-    function:
+#  cloud:
+#    function:
 
     stream:
       kafka:
