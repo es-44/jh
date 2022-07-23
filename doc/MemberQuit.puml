@@ -1,0 +1,19 @@
+@startuml
+title "Member Quit"
+skinparam actorStyle awesome
+
+actor User as "User"
+participant Member 
+database Kafka
+database MongoDB
+participant Community
+
+User -> Member: Request: Quit Member
+Member -> Member: Quit Member
+Member -> Kafka: <font color=blue><b>[Pub] MemberQuitEvent
+Member -> MongoDB: Log for Event Publish
+Kafka -> Community: <font color=blue><b>[Sub] MemberQuitEvent
+Community -> MongoDB: Log for Event Subscribe
+Community -> Community: Quit Community
+
+@enduml

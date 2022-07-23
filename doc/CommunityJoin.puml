@@ -1,0 +1,19 @@
+@startuml
+title "Community Join"
+skinparam actorStyle awesome
+
+actor User as "User"
+participant Community
+database Kafka
+database MongoDB
+participant Member 
+
+User -> Community: Request: Join Community
+Community -> Community: Join Community
+Community -> Kafka: <font color=blue><b>[Pub] CommunityJoinEvent 
+Community -> MongoDB: Log for Event Publish
+Kafka -> Member: <font color=blue><b>[Sub] CommunityJoinEvent
+Member -> MongoDB: Log for Event Subscribe
+Member -> Member: Update Member's Community Count
+
+@enduml
